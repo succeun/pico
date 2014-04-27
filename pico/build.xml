@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+<project name="pico" default="compile" basedir=".">
+
+	<property name="version" value="0.1"/>
+	<property name="src" value="./src"/>
+	<property name="lib" value="./lib"/>
+	<property name="build" value="./classes"/>
+	<property name="contain_package" value="**/*"/>
+	<property name="dist" value="."/>
+	<property name="deploy" value="./deploy"/>
+
+	<property name="site.src" value="./xdocs"/>
+    <property name="site.dest" value="./site-docs"/>
+    <property name="site.projectFile" value="stylesheets/project.xml"/>
+
+	<path id="classpath.ref">
+		<pathelement path="${build}"/>
+		<fileset dir="./lib">
+			<include name="**/*.jar"/>
+			<include name="**/*.zip"/>
+		</fileset>
+		<fileset dir="${lib}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+		<fileset dir="${java.home}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<patternset id="etc.file">
+		<exclude name="**/CVS" />
+		<exclude name="**/.svn" />
+		<include name="**/*.conf" />
+		<include name="**/*.xsd" />
+		<include name="**/*.dtd" />
+		<include name="**/*.config" />
+        <include name="**/*.gif"/>
+        <include name="**/*.jpg"/>
+        <include name="**/*.jpeg"/>
+        <include name="**/*.png"/>
+        <include name="**/*.wav"/>
+        <include name="**/*.dtd"/>
+        <include name="**/*.xml"/>
+        <include name="**/*.xsl"/>
+        <include name="**/*.html"/>
+        <include name="**/*.tld"/>
+        <include name="**/*.ftl"/>
+        <include name="**/*.ftlx"/>
+        <include name="**/*.jsp"/>
+        <include name="**/*.css"/>
+        <include name="**/*.js"/>
+		<include name="**/*.ini"/>
+        <include name="**/*.properties"/>
+    </patternset>
+
+    <patternset id="src.file">
+        <include name="**/*.java"/>
+    </patternset>
+
+    <target name="init">
+		<tstamp/>
+		<mkdir dir="${build}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac destdir="${build}"
+			classpathref="classpath.ref"
+			debug="true"
+			debuglevel="lines,vars,source"
+			deprecation="off"
+			srcdir="${src}"
+			includeantruntime="false">
+		</javac>
+		<copy todir="${build}">
+            <fileset dir="${src}">
+                <patternset refid="etc.file"/>
+            </fileset>
+        </copy>
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${dist}"/>
+		<jar jarfile="${dist}/${ant.project.name}-${version}.jar">
+			<fileset dir="${build}" includes="${contain_package}">
+				<patternset refid="etc.file"/>
+            </fileset>
+		</jar>
+    </target>
+	
+	<target name="clear">
+		<delete dir="${build}"/>
+		<delete>
+			<fileset dir=".">
+				<include name="pico-*.jar"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="help">
+		<echo message="=============================================================="/>
+		<echo message="Build options"/>
+		<echo message="    "/>
+		<echo message="    compile - Compile this project(default)"/>
+		<echo message="    jar - Compile and archive this project"/>
+		<echo message="    clear - clean all"/>
+		<echo message="                                          Author: Eun Jeong-Ho"/>
+		<echo message="=============================================================="/>
+	</target>
+
+</project>

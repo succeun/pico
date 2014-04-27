@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<!DOCTYPE web-app
+        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <servlet>
+        <servlet-name>ServiceServlet </servlet-name>
+        <servlet-class>hi.pico.ServiceServlet</servlet-class>
+        <!--
+        <init-param>
+	        <param-name>console-enable</param-name>
+	        <param-value>true</param-value>
+	    </init-param>
+	    <init-param>
+	        <param-name>console-password</param-name>
+	        <param-value>1234</param-value>
+	    </init-param>
+	    -->
+	    <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServiceServlet</servlet-name>
+        <url-pattern>/ctrl/*</url-pattern>
+    </servlet-mapping>
+</web-app>

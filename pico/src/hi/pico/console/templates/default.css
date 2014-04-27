@@ -1,0 +1,381 @@
+html {
+	width: 100%;
+}
+
+body {
+	font-family: "Trebuchet MS", verdana, gulim, ungulim, eunjin, monospace;
+	font-size: 13px;
+	color: #3D3535;
+	background-color: #F4F4F4;
+	margin: 20px;
+	padding: 0px;
+	line-height: 160%;
+}
+
+/* Wrapper */
+.all {
+	text-align: center;
+	width: 100%;
+}
+
+/* the container */
+.box {
+	background-color: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #BBBBBB;
+	padding: 20px;
+	text-align: left;
+	width: 96%;
+}
+
+/*holds the tabs at the top*/
+.menu {
+	background-color: #FFFFFF;
+	text-align: right;
+	padding-right: 5px;
+	font-size: 12px;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+/*holds the logo and image*/
+.header {
+	background-color: #a8b9d3;
+	padding: 10px;
+	color: white;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.header img {
+	padding: 10px;
+}
+
+.engine {
+    float: right;
+}
+
+/*just a fix, taken from http://www.positioniseverything.net/easyclearing.html*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */
+
+/*the main text container*/
+.content {
+	margin-left: 185px;
+	padding: 5px 20px 20px 25px;
+	border-left: 1px solid #c0c0c0;
+	list-style-image: url(resource?path=bullet-ctx.png);
+	list-style-position: inherit;
+}
+
+.content h1 {
+	font-size: 150%;
+	margin: 10px 0px 0px 0px;
+	padding: 0px 0px 5px 0px;
+	border-bottom: 2px solid #85c329;
+}
+
+.content h2 {
+	font-size: 110%;
+	margin: 10px 0px 0px 0px;
+	padding: 0px 0px 2px 0px;
+	border-bottom: 2px solid #85c329;
+}
+
+.content ul {
+	margin: 0px 0px 0px 25px;
+	padding: 0px 0px 0px 0px;
+}
+
+/*this is the right hand bar, news bar, links bar w/e*/
+.sidebar {
+	margin-top: 20px;
+	width: 160px;
+    border-right: 1px solid #c0c0c0;
+    float: left;
+	padding-left: 10px;
+	padding-right: 15px;
+}
+
+.sidebar h1 {
+	color: #333333;
+	margin: 0px 0px 0px 0px;
+	padding: 3px 3px 3px 9px;
+	font-size: 110%;
+	font-weight: bold;
+}
+
+.sidebar a:link, .sidebar a:active, .sidebar a:visited {
+	color: #547699;
+}
+
+.sidebar.selected .sidebar.selected a:link, .sidebar.selected a:active, .sidebar.selected a:visited {
+	color: #2828DD;
+}
+
+/*this just lets you have a "comment" type area in the main content*/
+.p1 {
+	padding: 20px;
+	background-color: #F7F7F4;
+	font-size: 90%;
+}
+
+/*sets the padding for the sidebar text, not the headings*/
+.p2 {
+	padding: 0px 20px 20px 20px;
+	background-color: #FFFFFF;
+	list-style-image: url(resource?path=skyblue-bullet.png);
+	list-style-position: inherit;
+}
+
+.p2 ul {
+	margin: 0px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
+}
+
+/*the footer, with copyright*/
+.footer {
+	clear: both;
+	background-color: #999;
+	color: #ffffff;
+	padding: 4px;
+	font-size: 90%;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.helptext {
+	color: #888;
+	font-size: 90%;
+	padding-left: 10px;
+}
+
+/*sets the link colours and style*/
+a:link, a:active, a:visited {
+	color: #547699;
+}
+
+a:hover {
+	color: #999999;
+	text-decoration: none;
+}
+
+.footer a:link, .footer a:active, .footer a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+span.option {
+	float: left;
+	padding-left: 144px;
+}
+
+table {
+	border-style: none;
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	background-color: white;
+	width: 98%;
+}
+
+table th {
+	border: 1px solid #bbb;
+	padding: 3px 3px 3px 3px;
+	background-color: #ddd;
+	text-align: center;
+}
+
+table td {
+	border: 1px solid #bbb;
+	padding: 3px 3px 3px 3px;
+	background-color: white;
+}
+
+table tr.odd td {
+	background-color: white;
+}
+
+table tr.even td {
+	background-color: #f8f8f8;
+}
+
+table.canclick td a:link, table.canclick td a:active, table.canclick td a:visited {
+	text-decoration: none;
+	color: #3d3535;
+}
+
+table.canclick tr:hover td {
+	background-color: #e8f0f8;
+}
+
+.loadingother {
+	display: block;
+	background: url('resource?path=loading.gif') no-repeat;
+	position: relative;
+	width: 16px;
+	height: 16px;
+	padding-bottom: 10px;
+	top: 9px;
+	z-index: 1000;
+	}
+
+.path {
+    float: right;
+    margin-right: 20px;
+}
+
+.file {
+    font-family: "Courier New" , Courier, mono, monospace;
+	font-size: 12px;
+	border: 1px solid #2B91AF;
+    background-color: #fff;
+    margin: 5px;
+    padding: 5px;
+    line-height: 100%;
+}
+
+.yellowbar {
+    background-color: #FFF56E;
+    border: 1px solid #333CCC;
+    margin-left: 0px;
+    padding-left: 2px;
+    float: left;
+    height: 20px;
+}
+
+.bluebar {
+    background-color: #33CCFF;
+    border: 1px solid #333CCC;
+    margin-left: 0px;
+    padding-left: 2px;
+    float: left;
+    height: 20px;
+}
+
+.redbar {
+    background-color: #FFC6C3;
+    border: 1px solid #333CCC;
+    margin-left: 0px;
+    padding-left: 2px;
+    float: left;
+    height: 20px;
+}
+
+.greenbar {
+    background-color: #7AF67A;
+    border: 1px solid #333CCC;
+    margin-left: 0px;
+    padding-left: 2px;
+    float: left;
+    height: 20px;
+}
+
+.right {
+	margin-right: 2px;
+    float: right;
+}
+
+.left {
+	float: left;
+}
+
+.fatal {
+    color:#0078FF;
+    font-weight: bold;
+}
+.error {
+    color:#CD1039;
+    font-weight: bold;
+}
+.warn {
+    color:#64CD3C;
+    font-weight: bold;
+}
+.info {
+    color:#FF8200;
+    font-weight: bold;
+}
+.debug {
+    color:#3C3C3C;
+    font-weight: bold;
+}
+
+.logdate {
+    color:#008080;
+}
+
+.elsapedtime {
+    background-color: #FFF56E;
+    border: 1px solid #333CCC;
+    margin-left: 0px;
+    padding-left: 2px;
+    float: left;
+    height: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.sidebar a[href ^="http://"],
+.sidebar a[href ^="gopher://"] {
+    background: url(resource?path=external.png) center right no-repeat;
+    padding-right: 13px;
+}
+.sidebar a[href ^="https://"],
+.link-https {
+    background: url(resource?path=lock_icon.gif) center right no-repeat;
+    padding-right: 16px;
+}
+.sidebar a[href ^="mailto:"],
+.link-mailto {
+    background: url(resource?path=mail_icon.gif) center right no-repeat;
+    padding-right: 18px;
+}
+.sidebar a[href ^="news://"] {
+    background: url(resource?path=news_icon.png) center right no-repeat;
+    padding-right: 18px;
+}
+.sidebar a[href ^="ftp://"],
+.link-ftp {
+    background: url(resource?path=file_icon.gif) center right no-repeat;
+    padding-right: 18px;
+}
+.sidebar a[href ^="irc://"],
+.link-irc {
+    background: url(resource?path=discussionitem_icon.gif) center right no-repeat;
+    padding-right: 18px;
+}

@@ -1,0 +1,149 @@
+/* Syntax Highlighter Css */
+
+.highlighter
+{
+	font-family: "Courier New" , Courier, monospace;
+	font-size: 12px;
+	border: 0px solid #2B91AF;
+	background-color: #FFFFFF;
+    width: 100%;
+	/*overflow: auto;*/
+	margin: 0px 0px 0px 0px;
+}
+
+.highlighter-line /* line number contain */
+{
+	font-family: "Courier New" , Courier, monospace;
+	font-size: 12px;
+	border: 0px solid #2B91AF;
+	background-color: #EEEEEE;
+    width: 100%;
+	/*overflow: auto;*/
+	margin: 0px 0px 0px 0px;
+}
+
+.highlighter-line ol
+{
+	color: dimgray; /* source, line number color */
+}
+
+.highlighter-line ol li
+{
+	border-left: 1px solid #6CE26C;
+    background-color: #FFFFFF;
+    padding-left: 10px;
+}
+
+/* Language specific styles */
+
+.sh-csharp {}
+.sh-csharp .comment { color: green; }
+.sh-csharp .string { color: blue; }
+.sh-csharp .preprocessor { color: gray; }
+.sh-csharp .keyword { color: blue; }
+.sh-csharp .vars { color: #d00; }
+.sh-csharp .char { color: #000; font-weight: bold; }
+
+.sh-php {}
+.sh-php .comment { color: green; }
+.sh-php .string { color: blue; }
+.sh-php .preprocessor { color: gray; }
+.sh-php .keyword { color: blue; }
+.sh-php .vars { color: #d00; }
+.sh-php .char { color: #000; font-weight: bold; }
+
+.sh-vb {}
+.sh-vb .comment { color: green; }
+.sh-vb .string { color: blue; }
+.sh-vb .preprocessor { color: gray; }
+.sh-vb .keyword { color: blue; }
+.sh-vb .function { color: red; }
+
+.sh-sql {}
+.sh-sql .comment { color: green; }
+.sh-sql .string { color: red; }
+.sh-sql .keyword { color: blue; }
+.sh-sql .func { color: #ff1493; }
+.sh-sql .op { color: #808080; }
+
+.sh-xml {}
+.sh-xml .cdata { color: #ff1493; }
+.sh-xml .comments { color: green; }
+.sh-xml .tag { font-weight: bold; color: blue; }
+.sh-xml .tag-name { color: black; font-weight: bold; }
+.sh-xml .attribute { color: red; }
+.sh-xml .attribute-value { color: blue; }
+
+.sh-delphi {}
+.sh-delphi .comment { color: #008200; font-style: italic; }
+.sh-delphi .string { color: blue; }
+.sh-delphi .number { color: blue; }
+.sh-delphi .directive { color: #008284; }
+.sh-delphi .keyword { font-weight: bold; color: navy; }
+.sh-delphi .variable { color: #000; }
+
+.sh-py {}
+.sh-py .comment { color: green; }
+.sh-py .string { color: red; }
+.sh-py .docstring { color: green; }
+.sh-py .keyword { color: blue; font-weight: bold;}
+.sh-py .builtins { color: #ff1493; }
+.sh-py .magicmethods { color: #808080; }
+.sh-py .exceptions { color: brown; }
+.sh-py .types { color: brown; font-style: italic; }
+.sh-py .commonlibs { color: #8A2BE2; font-style: italic; }
+.sh-py .char { color: #000; font-weight: bold; }
+
+.sh-rb {}
+.sh-rb .comment { color: #c00; }
+.sh-rb .string  { color: #f0c; }
+.sh-rb .symbol  { color: #02b902; }
+.sh-rb .keyword { color: #069; }
+.sh-rb .variable { color: #6cf; }
+.sh-rb .char { color: #000; font-weight: bold; }
+
+.sh-css {}
+.sh-css .comment { color: green; }
+.sh-css .string { color: red; }
+.sh-css .font { color: red; }
+.sh-css .value { color: red; }
+.sh-css .keyword { color: blue; }
+.sh-css .color { color: darkred; }
+.sh-css .size { color: #d00; }
+
+.sh-java {}
+.sh-java .comment { color: rgb(63,127,95); }
+.sh-java .string { color: rgb(42,0,255); }
+.sh-java .keyword { color: rgb(127,0,85); font-weight: bold; }
+.sh-java .annotation { color: #646464; }
+.sh-java .number { color: #C00000; }
+.sh-java .class { color: red; }
+.sh-java .char { color: #000; font-weight: bold; }
+
+.sh-cpp {}
+.sh-cpp .comment { color: #e00; }
+.sh-cpp .string { color: red; }
+.sh-cpp .preprocessor { color: #CD00CD; font-weight: bold; }
+.sh-cpp .keyword { color: #5697D9; font-weight: bold; }
+.sh-cpp .datatype { color: #2E8B57; font-weight: bold; }
+.sh-cpp .char { color: #000; font-weight: bold; }
+
+.sh-properties {}
+.sh-properties .comment { color: green; }
+.sh-properties .string { color: red; }
+.sh-properties .property { color: blue; font-weight: bold; }
+
+.sh-js {}
+.sh-js .comment { color: green; }
+.sh-js .string { color: blue; }
+.sh-js .preprocessor { color: gray; }
+.sh-js .keyword { color: blue; }
+.sh-js .builtin { color: red; }
+.sh-js .char { color: #000; font-weight: bold; }
+
+.sh-perl {}
+.sh-perl .comment { color: #c00; }
+.sh-perl .string  { color: #f0c; }
+.sh-perl .keyword { color: #069; }
+.sh-perl .variable { color: #6cf; }
+.sh-perl .char { color: #000; font-weight: bold; }
