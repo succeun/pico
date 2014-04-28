@@ -22,6 +22,7 @@ public class Sample {
 	public void onBefore(ServletContext context, HttpServletRequest req, HttpServletResponse res) throws Exception {
 		res.setContentType("text/html; charset=utf-8");
 		req.setCharacterEncoding("utf-8");
+		System.out.println("Before call.");
 	}
 	
 	@After

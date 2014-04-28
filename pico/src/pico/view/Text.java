@@ -1,10 +1,10 @@
 package pico.view;
 
+import pico.ControllerContext;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import pico.ControllerContext;
 
 public class Text extends AbstractData {
 	private String contentType;

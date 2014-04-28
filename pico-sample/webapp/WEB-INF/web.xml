@@ -18,6 +18,10 @@
 	        <param-value>1234</param-value>
 	    </init-param>
 	    -->
+	    <init-param>
+	        <param-name>base-package</param-name>
+	        <param-value>pico.sample</param-value>
+	    </init-param>
 	    <load-on-startup>1</load-on-startup>
     </servlet>
 

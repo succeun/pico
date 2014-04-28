@@ -1,5 +1,7 @@
 package pico.view;
 
+import pico.ControllerContext;
+
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,8 +9,6 @@ import java.util.Map;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import pico.ControllerContext;
 
 public abstract class View {
 	private Map<String, Object> attributes = new LinkedHashMap<String, Object>();

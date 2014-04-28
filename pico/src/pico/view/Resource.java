@@ -1,12 +1,12 @@
 package pico.view;
 
+import pico.ControllerContext;
+
 import java.net.URL;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import pico.ControllerContext;
 
 public class Resource extends AbstractDownload {
 	private String mimetype;

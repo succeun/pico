@@ -1,13 +1,13 @@
 package pico.view;
 
+import pico.ControllerContext;
+
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import pico.ControllerContext;
 
 public class Image extends AbstractImage {
 	private BufferedImage image;

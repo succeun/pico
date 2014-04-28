@@ -1,5 +1,7 @@
 package pico.view;
 
+import pico.ControllerContext;
+
 import java.io.StringWriter;
 
 import javax.servlet.ServletContext;
@@ -8,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
-
-import pico.ControllerContext;
 
 public class Json extends AbstractData {
 	private String json;

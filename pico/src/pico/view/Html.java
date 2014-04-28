@@ -1,11 +1,11 @@
 package pico.view;
 
+import pico.ControllerContext;
+import pico.Utility;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import pico.ControllerContext;
-import pico.Utility;
 
 public class Html extends AbstractData {
 	private String html;
