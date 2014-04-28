@@ -14,10 +14,10 @@ public class AESUtil {
 	
 	static {
 		//init(KEY, new byte[]{1,2,3,4});
-		initS("0");
+		init(KEY);
 	}
 	
-	public static void initS(String secureKey) {
+	public static void init(String secureKey) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("SHA-256");
 			md.reset();
