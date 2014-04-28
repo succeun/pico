@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="euc-kr"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE web-app
         PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
@@ -7,7 +7,7 @@
 <web-app>
     <servlet>
         <servlet-name>ServiceServlet </servlet-name>
-        <servlet-class>hi.pico.ServiceServlet</servlet-class>
+        <servlet-class>pico.ServiceServlet</servlet-class>
         <!--
         <init-param>
 	        <param-name>console-enable</param-name>
