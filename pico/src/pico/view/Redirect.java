@@ -11,7 +11,7 @@ public class Redirect extends View {
 	private int code = HttpServletResponse.SC_FOUND;
 
 	public Redirect(String location) {
-		this.location = location;
+		this(location, false);
 	}
 
 	public Redirect(String location, boolean permanent) {

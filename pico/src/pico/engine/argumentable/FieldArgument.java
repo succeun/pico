@@ -3,11 +3,11 @@
  */
 package pico.engine.argumentable;
 
+import pico.commons.beans.BeanInfo;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.beanutils.ConvertUtils;
-
-import pico.commons.beans.BeanInfo;
 
 public class FieldArgument extends BaseArgument {
 	public boolean isAvailable(Class<?> paramType) {

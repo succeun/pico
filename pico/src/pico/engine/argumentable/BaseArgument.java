@@ -3,14 +3,14 @@
  */
 package pico.engine.argumentable;
 
+import pico.engine.Argumentable;
+
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-
-import pico.engine.Argumentable;
 
 public abstract class BaseArgument implements Argumentable {
 	public Object getParameter(ArgumentInfo argumentInfo, HttpServletRequest req) throws ServletException {

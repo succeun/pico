@@ -118,11 +118,23 @@ public abstract class Renderer {
 		return setView(new StatusCode(HttpServletResponse.SC_NOT_FOUND));
 	}
 	
-	public static View noContent() {
+	public static View forbidden() {
+		return setView(new StatusCode(HttpServletResponse.SC_FORBIDDEN));
+    }
+
+    public static View badRequest() {
+    	return setView(new StatusCode(HttpServletResponse.SC_BAD_REQUEST));
+    }
+
+    public static View noContent() {
 		return setView(new StatusCode(HttpServletResponse.SC_NO_CONTENT));
 	}
 	
-	public static ThreadLocal<Map<String, Object>> local = new ThreadLocal<Map<String, Object>>();
+    public static View internalServerError() {
+    	return setView(new StatusCode(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
+    }
+
+    public static ThreadLocal<Map<String, Object>> local = new ThreadLocal<Map<String, Object>>();
 	
 	private Map<String, Object> getLocal() {
 		Map<String, Object> attributes = local.get();

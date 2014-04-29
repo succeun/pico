@@ -1,7 +1,7 @@
 package pico;
 
 public enum ArgumentType {
-	ANY("ANY"), TEXT("TEXT"), XML("XML"), JSON("JSON"), HI_XML("HI_XML"), HI_JSON("HI_JSON");
+	ANY("ANY"), TEXT("TEXT"), XML("XML"), JSON("JSON");
 	
 	private String value;
 

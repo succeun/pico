@@ -3,10 +3,10 @@
  */
 package pico.engine.argumentable;
 
+import pico.MultipartRequest;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-
-import pico.MultipartRequest;
 
 public class MultipartRequestArgument extends BaseArgument {
 	public boolean isAvailable(Class<?> paramType) {
