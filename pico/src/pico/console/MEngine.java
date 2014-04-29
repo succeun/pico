@@ -4,7 +4,9 @@ import javax.servlet.ServletException;
 
 import pico.WebController;
 import pico.WebMethod;
+import pico.console.templates.ConsoleRoot;
 import pico.view.View;
+import pico.view.Views;
 
 @WebController
 public class MEngine extends Console {
@@ -15,7 +17,7 @@ public class MEngine extends Console {
         String realPath = context.getRealPath("/");
         req.setAttribute("realPath", realPath.replaceAll("\\\\+", "/").replaceAll("/+", "/"));
 
-        return views.forward("/MEngine/config.ftl");
+        return forward("/MEngine/config.ftl");
     }
 	
 	@WebMethod

@@ -8,8 +8,10 @@ import javax.servlet.ServletException;
 
 import pico.WebController;
 import pico.WebMethod;
+import pico.console.templates.ConsoleRoot;
 import pico.engine.util.RSAAuth;
 import pico.view.View;
+import pico.view.Views;
 
 @WebController
 public class Login extends Console {
@@ -19,7 +21,7 @@ public class Login extends Console {
 		RSAAuth.encrypt(req);
 
 		req.setAttribute("message", "");
-		return views.forward("/Login/login.ftl");
+		return forward("/Login/login.ftl");
 	}
 
 	@WebMethod
@@ -34,13 +36,13 @@ public class Login extends Console {
 			if (url != null && url.length() > 0) {
 				url = URLDecoder.decode(url, "euc-kr");
 				url = replace(url);
-				return views.redirect(url);
+				return Views.redirect(url);
 			} else {
-				return views.redirect("../Main/main");
+				return Views.redirect("../Main/main");
 			}
 		} else {
 			req.setAttribute("message", "비밀번호가 틀렸습니다.");
-			return views.forward("/Login/login.ftl");
+			return forward("/Login/login.ftl");
 		}
 	}
 

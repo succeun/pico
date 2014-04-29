@@ -109,6 +109,22 @@ public abstract class Views {
 		return setView(new Redirect(location, code));
 	}
 	
+	public static View jsp(String path) {
+		return setView(new JspView(path));
+	}
+	
+	public static View ftl(String path) {
+		return setView(new FTLView(path));
+	}
+	
+	public static View ftl(Class<?> classForTemplateLoading, String path) {
+		return setView(new FTLView(classForTemplateLoading, path));
+	}
+	
+	public static View ftl(String dirForTemplateLoading, String path) {
+		return setView(new FTLView(dirForTemplateLoading, path));
+	}
+	
 	public static View ok() {
 		return setView(new StatusCode(HttpServletResponse.SC_OK));
 	}

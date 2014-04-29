@@ -24,8 +24,10 @@ import org.slf4j.LoggerFactory;
 import pico.ServiceServlet;
 import pico.WebController;
 import pico.WebMethod;
+import pico.console.templates.ConsoleRoot;
 import pico.engine.SchedulerManager;
 import pico.view.View;
+import pico.view.Views;
 
 // http://code.google.com/p/myschedule Âü°í
 @WebController
@@ -83,7 +85,7 @@ public class MCron extends Console {
         Collections.sort(jobWithTriggerList);
         
         req.setAttribute("items", jobWithTriggerList);
-        return views.forward("/MCron/list.ftl");
+        return forward("/MCron/list.ftl");
 	}
 	
 	private List<JobDetail> getAllJobDetails(Scheduler scheduler) throws SchedulerException {

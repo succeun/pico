@@ -19,10 +19,9 @@ import pico.WebController;
 import pico.WebMethod;
 import pico.console.templates.ConsoleRoot;
 import pico.engine.ControllerEngine;
-import pico.view.FTLViews;
 import pico.view.Redirect;
-import pico.view.Views;
 import pico.view.View;
+import pico.view.Views;
 
 @WebController
 public class Console {
@@ -44,8 +43,6 @@ public class Console {
 	public static String getConsolePassword() {
 		return consolePassword;
 	}
-	
-	protected static Views views = new FTLViews(ConsoleRoot.class);
 	
 	protected ServletContext context;
 	protected HttpServletRequest req;
@@ -139,6 +136,10 @@ public class Console {
 	public View resource(String path) throws IOException {
 		URL url = ConsoleRoot.class.getResource(path);
 		logger.debug("Request Resource: {}", path);
-		return views.resource(url);
+		return Views.resource(url);
+	}
+	
+	public View forward(String path) {
+		return Views.ftl(ConsoleRoot.class, path);
 	}
 }

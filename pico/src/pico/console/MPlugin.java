@@ -4,7 +4,9 @@ import java.io.IOException;
 
 import pico.WebController;
 import pico.WebMethod;
+import pico.console.templates.ConsoleRoot;
 import pico.view.View;
+import pico.view.Views;
 
 /**
  * @author Eun Jeong-Ho, succeun@gmail.com
@@ -25,7 +27,7 @@ public class MPlugin extends Console
             	PluginView pluginView = (PluginView) view;
             	String ftlHtml = pluginView.getHtml();
             	req.setAttribute("_content_", (ftlHtml == null) ? "" : ftlHtml);
-            	return views.forward("/MPlugin/action.ftl");
+            	return forward("/MPlugin/action.ftl");
             } else {
             	return view;
             }
