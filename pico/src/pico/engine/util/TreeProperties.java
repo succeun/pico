@@ -1,4 +1,4 @@
-package pico;
+package pico.engine.util;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

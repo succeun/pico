@@ -95,8 +95,8 @@ public final class ArgumentMapper {
         if (parameterTypes != null && parameterTypes.length > 0) {
             wrappers = new ArrayList<Argumentable>();
 
-            for (Class<?> argumentType : parameterTypes) {
-                wrappers.add( getArgumentable(argumentType) );
+            for (Class<?> parameterType : parameterTypes) {
+                wrappers.add( getArgumentable(parameterType) );
             }
         }
         

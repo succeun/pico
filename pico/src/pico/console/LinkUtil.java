@@ -1,4 +1,4 @@
-package pico;
+package pico.console;
 
 import javax.servlet.http.HttpServletRequest;
 

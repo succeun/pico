@@ -6,8 +6,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import pico.LinkUtil;
-
 /**
  * 트리구조의 메뉴를 만들기 위한, 각각의 메뉴를 나타내는 클래스이다.
  * @author Eun Jeong-Ho, succeun@gmail.com
