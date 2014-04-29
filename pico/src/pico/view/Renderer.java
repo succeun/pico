@@ -176,36 +176,5 @@ public abstract class Renderer {
 		return setView(forwardInternal(path));
 	}
 
-	/**
-	 * Layout을 이용하여, View로 forward 나타낸다.
-	 * 
-	 * @param request
-	 * @param response
-	 * @param layoutPath
-	 * @param path
-	 * @throws ControllerException
-	 */
-	public View forward(String layoutPath, String path)
-			throws ServletException {
-		return setView(forwardInternal(layoutPath, path));
-	}
-	
-	/**
-	 * Layout을 이용하여, View로 forward 나타낸다.
-	 * 
-	 * @param request
-	 * @param response
-	 * @param layoutPath
-	 * @param path
-	 * @throws ControllerException
-	 */
-	public View forward(String layoutPath, String[] paths) throws ServletException {
-		return setView(forwardInternal(layoutPath, paths));
-	}
-	
 	public abstract View forwardInternal(String path) throws ServletException;
-
-	public abstract View forwardInternal(String layoutPath, String path) throws ServletException;
-	
-	public abstract View forwardInternal(String layoutPath, String[] paths) throws ServletException;
 }

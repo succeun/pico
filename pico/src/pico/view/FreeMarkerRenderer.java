@@ -88,98 +88,26 @@ public class FreeMarkerRenderer extends Renderer {
 	 */
 	@Override
 	public View forwardInternal(String path) throws ServletException {
-		return new FreemarkerForward(cfg, null, path);
+		return new FreemarkerForward(cfg, path);
 	}
 
-	/**
-	 * Layout을 이용하여, View로 forward 나타낸다. 사용방법: <!-- Body Start --> <#include
-	 * getContentPath()/> <!-- Body End -->
-	 * 
-	 * @param request
-	 * @param response
-	 * @param layoutPath
-	 * @param path
-	 * @throws ControllerException
-	 */
-	@Override
-	public View forwardInternal(String layoutPath, String path) throws ServletException {
-		if (layoutPath == null)
-			throw new ServletException("Layout Path is null.");
-		if (!layoutPath.startsWith("/"))
-			throw new ServletException("LayoutPath(" + layoutPath
-					+ ") is not abstract path. ex) '/layout/layout1.jsp'");
-		if (!path.startsWith("/"))
-			throw new ServletException("Path(" + path
-					+ ") is not abstract path. ex) '/page/path1.jsp'");
-		
-		return new FreemarkerForward(cfg, layoutPath, path);
-	}
-
-	/**
-	 * Layout을 이용하여, View로 forward 나타낸다. 사용방법: <!-- Body Start --> <#include
-	 * getContentPath(0)/> <!-- Body End -->
-	 * 
-	 * @param request
-	 * @param response
-	 * @param layoutPath
-	 * @param path
-	 * @throws ControllerException
-	 */
-	@Override
-	public View forwardInternal(String layoutPath, String[] paths) throws ServletException {
-		if (layoutPath == null)
-			throw new ServletException("Layout Path is null.");
-		if (!layoutPath.startsWith("/"))
-			throw new ServletException("LayoutPath(" + layoutPath + ") must be abstract path. ex) '/layout/layout1.jsp'");
-		for (String path : paths) {
-			if (!path.startsWith("/"))
-				throw new ServletException("Path(" + path + ") must be abstract path. ex) '/page/path1.jsp'");
-		}
-		
-		return new FreemarkerForward(cfg, layoutPath, paths);
-	}
-	
 	public static class FreemarkerForward extends View {
 		private Configuration config;
-		private String layoutPath;
 		private String path;
-		private String[] paths;
 
-		public FreemarkerForward(Configuration config, String layoutPath, String path) {
+		public FreemarkerForward(Configuration config, String path) {
 			this.config = config;
-			this.layoutPath = layoutPath;
 			this.path = path;
 		}
 		
-		public FreemarkerForward(Configuration config, String layoutPath, String[] paths) {
-			this.config = config;
-			this.layoutPath = layoutPath;
-			this.paths = paths;
-		}
-
 		@Override
 		public void renderInternal(ServletContext context, HttpServletRequest req,
 				HttpServletResponse res, ControllerContext controllerContext) throws Exception {
-			if (layoutPath == null) {
-				Template temp = config.getTemplate(path);
-				SimpleHash root = new SimpleHash();
-				root.put("request", new RequestContextModel(req));
-				root.put("session", new SessionContextModel(req));
-				temp.process(root, res.getWriter());
-			} else {
-				Template temp = config.getTemplate(layoutPath);
-				SimpleHash root = new SimpleHash();
-				root.put("request", new RequestContextModel(req));
-				root.put("session", new SessionContextModel(req));
-				if (layoutPath != null && layoutPath.length() > 0) {
-					if (path != null) {
-						root.put("getContentPath", new PathOfContentForLayoutMethod(path));
-					} else {
-						root.put("getContentPath", new PathOfContentForLayoutMethod(paths));
-					}
-				}
-				temp.process(root, res.getWriter());
-			}
+			Template temp = config.getTemplate(path);
+			SimpleHash root = new SimpleHash();
+			root.put("request", new RequestContextModel(req));
+			root.put("session", new SessionContextModel(req));
+			temp.process(root, res.getWriter());
 		}
 		
 	}
@@ -215,7 +143,6 @@ public class FreeMarkerRenderer extends Renderer {
 			this.session = request.getSession();
 		}
 
-		@SuppressWarnings("unchecked")
 		public TemplateModel get(String key) throws TemplateModelException {
 
 			Object bean = session.getAttribute(key);
@@ -228,29 +155,6 @@ public class FreeMarkerRenderer extends Renderer {
 
 		public boolean isEmpty() {
 			return false;
-		}
-	}
-
-	public static class PathOfContentForLayoutMethod implements TemplateMethodModelEx {
-		private String path = null;
-		private List<String> paths = null;
-
-		public PathOfContentForLayoutMethod(String path) {
-			this.path = path;
-		}
-
-		public PathOfContentForLayoutMethod(String[] paths) {
-			this.paths = Arrays.asList(paths);
-		}
-
-		@SuppressWarnings("unchecked")
-		public Object exec(List list) throws TemplateModelException {
-			if (paths == null)
-				return new SimpleScalar(path);
-			else {
-				int i = Integer.parseInt(((String) list.get(0)));
-				return new SimpleScalar(paths.get(i)); // new SimpleSequence(paths[i]);
-			}
 		}
 	}
 }

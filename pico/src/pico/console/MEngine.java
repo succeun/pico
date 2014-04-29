@@ -15,7 +15,7 @@ public class MEngine extends Console {
         String realPath = context.getRealPath("/");
         req.setAttribute("realPath", realPath.replaceAll("\\\\+", "/").replaceAll("/+", "/"));
 
-        return renderer.forward(LAYOUT, "/MEngine/config.ftl");
+        return renderer.forward("/MEngine/config.ftl");
     }
 	
 	@WebMethod
