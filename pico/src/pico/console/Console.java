@@ -46,7 +46,6 @@ public class Console {
 	}
 	
 	protected static Renderer renderer = new FreeMarkerRenderer(ConsoleRoot.class);
-	protected static final String LAYOUT = "/layouts/layout.ftlx";
 	
 	protected ServletContext context;
 	protected HttpServletRequest req;
