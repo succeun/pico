@@ -11,7 +11,7 @@ import java.io.Serializable;
 /**
  * Upload가 정상적으로 되었다면 이 클래스를 통하여 알 수 있다.
  * 
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2005. 5. 27.
  */
 @SuppressWarnings("serial")

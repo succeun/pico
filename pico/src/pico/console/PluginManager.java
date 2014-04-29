@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import pico.ServiceServlet;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2006. 4. 21
  */
 public final class PluginManager {

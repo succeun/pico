@@ -24,7 +24,7 @@ import java.util.Date;
 
 /**
  * 
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2005. 9. 30. 
  */
 public class StringConvertor extends Convertor

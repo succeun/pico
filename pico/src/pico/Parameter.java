@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2007. 5. 23
  * @param <V>
  */

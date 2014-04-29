@@ -18,7 +18,7 @@ import pico.engine.MethodMapper;
 import pico.view.View;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2007. 1. 4
  */
 public class DefaultPlugin extends Plugin {

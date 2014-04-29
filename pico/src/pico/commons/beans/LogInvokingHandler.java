@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 
 /**
  * 
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2005. 6. 16.  
  */
 @SuppressWarnings("serial")

@@ -65,7 +65,7 @@ import java.util.Map;
  * 왜냐하면, 어떤 객체가 파라미터로 들어올지 모르기 때문이다.
  * 보통, 임의의 객체의 {@link Object#toString toString()}를 얻은 후에
  * 변환하는 것이 낫은 방법일 것이다.
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2005. 9. 30. 
  */
 public abstract class Convertor

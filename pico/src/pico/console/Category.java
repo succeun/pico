@@ -10,7 +10,7 @@ import pico.LinkUtil;
 
 /**
  * 트리구조의 메뉴를 만들기 위한, 각각의 메뉴를 나타내는 클래스이다.
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2007. 1. 25
  */
 @SuppressWarnings("serial")

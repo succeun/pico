@@ -42,7 +42,7 @@ import java.lang.reflect.UndeclaredThrowableException;
  * [참고]
  * 영역 지향 프로그래밍(Aspect-oriented programming : AOP)은 프로그래머들이 로깅과 같이 일반적인
  * 책임 구분을 넘어서는 행위인 횡단적 사항을 모듈화하도록 해주는 새로운 프로그래밍 기법이다.
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2005. 6. 16.
  */
 public final class ObjectProxy implements InvocationHandler

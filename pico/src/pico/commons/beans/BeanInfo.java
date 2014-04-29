@@ -49,7 +49,7 @@ import org.apache.commons.beanutils.ConvertUtils;
 /**
  * Bean 객체 또는 public Field를 가진 일반 객체를 분석하여, set, get, field 등의
  * 요소를 추출하여 핸들링 할 수 있도록 도와주는 클래스이다.
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2005. 6. 16.
  */
 public class BeanInfo

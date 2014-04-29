@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import pico.ControllerContext;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2006. 4. 10
  */
 public class MethodMapper

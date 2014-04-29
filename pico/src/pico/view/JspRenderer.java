@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2010. 8. 13.
  */
 public class JspRenderer extends Renderer {
@@ -30,7 +30,6 @@ public class JspRenderer extends Renderer {
 
 	public class JspForward extends View {
 		private String path;
-		private String[] paths;
 
 		public JspForward(String path) {
 			this.path = path;

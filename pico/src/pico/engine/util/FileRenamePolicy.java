@@ -5,7 +5,7 @@ import java.io.IOException;
 
 /**
  * 저장될때 이름명이 겹칠 수 있으므로, 새로운 파일명을 얻어온다.
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2005. 5. 25.
  */
 public class FileRenamePolicy implements RenamePolicy

@@ -16,7 +16,7 @@ import javax.servlet.ServletContext;
 /**
  * Properties의 화일에 들어 있는 키와 값을 Hierarchy 형태 즉, Tree 형태로 나타내기 위한 구조를 가지는 클래스이다.
  * 
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2005. 10. 11.
  */
 public class TreeProperties {

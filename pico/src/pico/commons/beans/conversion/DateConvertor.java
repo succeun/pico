@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 
 /**
  * 
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2005. 9. 30. 
  */
 public class DateConvertor extends Convertor

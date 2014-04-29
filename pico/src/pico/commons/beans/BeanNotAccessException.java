@@ -19,7 +19,7 @@
 package pico.commons.beans;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2006. 4. 17
  */
 @SuppressWarnings("serial")

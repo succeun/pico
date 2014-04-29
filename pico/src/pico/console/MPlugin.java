@@ -7,7 +7,7 @@ import pico.WebMethod;
 import pico.view.View;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2006. 12. 8
  */
 @WebController

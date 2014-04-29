@@ -42,7 +42,7 @@ import pico.WebMethod;
 import pico.engine.util.ClassUtil;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2012. 3. 2
  */
 public class ControllerMapper {

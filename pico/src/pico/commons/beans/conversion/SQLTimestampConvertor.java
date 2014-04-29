@@ -19,7 +19,7 @@
 package pico.commons.beans.conversion;
 
 /**
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2006. 5. 8
  */
 public class SQLTimestampConvertor extends Convertor

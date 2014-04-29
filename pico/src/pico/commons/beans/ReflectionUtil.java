@@ -33,7 +33,7 @@ import java.util.Properties;
  * [수정사항]<br>
  * IBM의 JDK의 경우, 필드를 가져올때, 순서가 거꾸로 반환이 된다. 따라서,
  * JAVA Vendor를 판별하여, 정상적으로 동작할 수 있게 정형화 시킨다.
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2004. 1. 26.
  */
 public final class ReflectionUtil

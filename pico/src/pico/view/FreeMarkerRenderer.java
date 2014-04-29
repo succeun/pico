@@ -26,7 +26,7 @@ import freemarker.template.TemplateModelException;
 
 /**
  * 
- * @author Eun Jeong-Ho, silver@intos.biz
+ * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2010. 8. 13.
  */
 public class FreeMarkerRenderer extends Renderer {
