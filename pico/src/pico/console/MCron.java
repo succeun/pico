@@ -83,7 +83,7 @@ public class MCron extends Console {
         Collections.sort(jobWithTriggerList);
         
         req.setAttribute("items", jobWithTriggerList);
-        return renderer.forward("/MCron/list.ftl");
+        return views.forward("/MCron/list.ftl");
 	}
 	
 	private List<JobDetail> getAllJobDetails(Scheduler scheduler) throws SchedulerException {

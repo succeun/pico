@@ -19,7 +19,7 @@ public class Login extends Console {
 		RSAAuth.encrypt(req);
 
 		req.setAttribute("message", "");
-		return renderer.forward("/Login/login.ftl");
+		return views.forward("/Login/login.ftl");
 	}
 
 	@WebMethod
@@ -34,13 +34,13 @@ public class Login extends Console {
 			if (url != null && url.length() > 0) {
 				url = URLDecoder.decode(url, "euc-kr");
 				url = replace(url);
-				return renderer.redirect(url);
+				return views.redirect(url);
 			} else {
-				return renderer.redirect("../Main/main");
+				return views.redirect("../Main/main");
 			}
 		} else {
 			req.setAttribute("message", "비밀번호가 틀렸습니다.");
-			return renderer.forward("/Login/login.ftl");
+			return views.forward("/Login/login.ftl");
 		}
 	}
 

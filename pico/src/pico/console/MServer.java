@@ -15,14 +15,14 @@ public class MServer extends Console {
 	public View thread() throws ServletException
     {
         req.setAttribute("threadgroup", dumpThreadGroup());
-        return renderer.forward("/MServer/thread.ftl");
+        return views.forward("/MServer/thread.ftl");
     }
 	
 	@WebMethod
     public View config() throws ServletException
     {
         req.setAttribute("props", System.getProperties());
-        return renderer.forward("/MServer/config.ftl");
+        return views.forward("/MServer/config.ftl");
     }
 
     private TGroup dumpThreadGroup()
@@ -139,7 +139,7 @@ public class MServer extends Console {
     public View memory() throws ServletException
     {
         getMemory();
-        return renderer.forward("/MServer/memory.ftl");
+        return views.forward("/MServer/memory.ftl");
     }
 
     private void getMemory()
@@ -186,6 +186,6 @@ public class MServer extends Console {
     {
         System.gc();
         getMemory();
-        return renderer.forward("/MServer/memory.ftl");
+        return views.forward("/MServer/memory.ftl");
     }
 }

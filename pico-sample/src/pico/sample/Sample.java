@@ -10,7 +10,7 @@ import pico.Before;
 import pico.MultipartConfig;
 import pico.WebController;
 import pico.WebMethod;
-import pico.view.Renderer;
+import pico.view.Views;
 import pico.view.View;
 
 @WebController
@@ -32,6 +32,6 @@ public class Sample {
 	
 	@WebMethod
 	public View sum(int x, int y) throws ServletException {
-		return Renderer.text("x + y = " + (x + y));
+		return Views.text("x + y = " + (x + y));
 	}
 }

@@ -29,27 +29,27 @@ import freemarker.template.TemplateModelException;
  * @author Eun Jeong-Ho, succeun@gmail.com
  * @since 2010. 8. 13.
  */
-public class FreeMarkerRenderer extends Renderer {
+public class FTLViews extends Views {
 	private Configuration cfg;
 
-	public FreeMarkerRenderer() {
+	public FTLViews() {
 		initilize(null, null, null);
 	}
 
-	public FreeMarkerRenderer(Class<?> classForTemplateLoading) {
+	public FTLViews(Class<?> classForTemplateLoading) {
 		initilize(classForTemplateLoading, null, null);
 	}
 
-	public FreeMarkerRenderer(Class<?> classForTemplateLoading,
+	public FTLViews(Class<?> classForTemplateLoading,
 			String templateEncoding) {
 		initilize(classForTemplateLoading, null, templateEncoding);
 	}
 
-	public FreeMarkerRenderer(File dirForTemplateLoading) {
+	public FTLViews(File dirForTemplateLoading) {
 		initilize(null, dirForTemplateLoading, null);
 	}
 
-	public FreeMarkerRenderer(File dirForTemplateLoading,
+	public FTLViews(File dirForTemplateLoading,
 			String templateEncoding) {
 		initilize(null, dirForTemplateLoading, templateEncoding);
 	}

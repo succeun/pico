@@ -15,9 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author Eun Jeong-Ho, succeun@gmail.com
  * @version 2005. 6. 15.
  */
-public abstract class Renderer {
-	public static final String BODY_PATH = "BODY_PATH";
-	
+public abstract class Views {
+
 	public static View binary(String mimetype, File file) {
 		return setView(new Binary(mimetype, file, file.getName()));
 	}
@@ -151,27 +150,27 @@ public abstract class Renderer {
 		return view;
 	}
 	
-	public Renderer set(String name, long value) {
+	public Views set(String name, long value) {
 		getLocal().put(name, value);
 		return this;
 	}
 
-	public Renderer set(String name, double value) {
+	public Views set(String name, double value) {
 		getLocal().put(name, value);
 		return this;
 	}
 
-	public Renderer set(String name, boolean value) {
+	public Views set(String name, boolean value) {
 		getLocal().put(name, value);
 		return this;
 	}
 
-	public Renderer set(String name, Object value) {
+	public Views set(String name, Object value) {
 		getLocal().put(name, value);
 		return this;
 	}
 	
-	public Renderer setAll(Map<String, ?> map) {
+	public Views setAll(Map<String, ?> map) {
 		getLocal().putAll(map);
 		return this;
 	}

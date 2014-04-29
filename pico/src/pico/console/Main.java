@@ -10,6 +10,6 @@ import pico.view.View;
 public class Main extends Console {
 	@WebMethod
 	public View main() throws ServletException {
-		return renderer.forward("/Main/main.ftl");
+		return views.forward("/Main/main.ftl");
     }
 }

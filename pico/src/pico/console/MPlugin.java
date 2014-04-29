@@ -25,7 +25,7 @@ public class MPlugin extends Console
             	PluginView pluginView = (PluginView) view;
             	String ftlHtml = pluginView.getHtml();
             	req.setAttribute("_content_", (ftlHtml == null) ? "" : ftlHtml);
-            	return renderer.forward("/MPlugin/action.ftl");
+            	return views.forward("/MPlugin/action.ftl");
             } else {
             	return view;
             }

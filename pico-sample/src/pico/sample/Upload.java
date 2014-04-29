@@ -15,7 +15,7 @@ import pico.MultipartRequest;
 import pico.Part;
 import pico.WebController;
 import pico.WebMethod;
-import pico.view.Renderer;
+import pico.view.Views;
 import pico.view.View;
 
 @WebController
@@ -49,6 +49,6 @@ public class Upload {
             	}
             }
         }
-        return Renderer.ok();
+        return Views.ok();
 	}
 }
