@@ -364,7 +364,7 @@ public class ControllerMapper {
 			HttpServletResponse res, MethodMapper methodMapper, Object controller, boolean isRendering) throws Exception {
 		if (!isRendering) {
 			controllerContext.addInvokedMethodMapper(methodMapper);	// 메인 메소드 수행 이력 저장
-			Object obj = methodMapper.invoke(controller, context, controllerContext, req, res);
+			Object obj = methodMapper.invoke(controller, null, context, controllerContext, req, res, null);
 			if (obj != null) {
 				isRendering = methodMapper.render(context, req, res, controllerContext, obj);
 			}
@@ -452,7 +452,7 @@ public class ControllerMapper {
 			
 			for (MethodMapper start : applicationStarts) {
 				ControllerContext controllerContext = new ControllerContext(engine, this, controllerClass, controllerName, controllerClassName, isSingletonable, start.getMethodName());
-				start.invoke(controller, config, config.getServletContext(), controllerContext, null, null);
+				start.invoke(controller, config, config.getServletContext(), controllerContext, null, null, null);
 			    logger.info(controllerName + "#" + start.getMethodName() + " is started.");
 			}
 		} catch (InvocationTargetException e) {
@@ -488,7 +488,7 @@ public class ControllerMapper {
 		    }
 		    if (!skip) {
 		    	before.getMethod().setAccessible(true);
-		    	Object obj = before.invoke(controller, context, controllerContext, req, res);
+		    	Object obj = before.invoke(controller, null, context, controllerContext, req, res, null);
 		    	if (!isRendering && obj != null) {
                 	boolean isRnd = before.render(context, req, res, controllerContext, obj);
     		    	if (isRnd)
@@ -521,7 +521,7 @@ public class ControllerMapper {
 		    }
 		    if (!skip) {
 		    	after.getMethod().setAccessible(true);
-		    	Object obj = after.invoke(controller, context, controllerContext, req, res);
+		    	Object obj = after.invoke(controller, null, context, controllerContext, req, res, null);
 		    	if (!isRendering && obj != null) {
                 	isRendering = after.render(context, req, res, controllerContext, obj);
     		    	if (isRendering)
@@ -554,7 +554,7 @@ public class ControllerMapper {
             }
             if (!skip) {
                 aFinally.getMethod().setAccessible(true);
-                Object obj = aFinally.invoke(controller, context, controllerContext, req, res);
+                Object obj = aFinally.invoke(controller, null, context, controllerContext, req, res, null);
                 if (!isRendering && obj != null) {
                 	isRendering = aFinally.render(context, req, res, controllerContext, obj);
     		    	if (isRendering)

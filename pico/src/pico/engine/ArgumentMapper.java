@@ -1,7 +1,20 @@
 package pico.engine;
 
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import pico.ArgumentType;
+import pico.ControllerContext;
 import pico.WebArgument;
 import pico.engine.argumentable.ArgumentInfo;
 import pico.engine.argumentable.BeanArgument;
@@ -17,14 +30,6 @@ import pico.engine.argumentable.PrintWriterArgument;
 import pico.engine.argumentable.ServletConfigArgument;
 import pico.engine.argumentable.ServletContextArgument;
 import pico.engine.argumentable.ThrowableArgument;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.servlet.ServletException;
 
 import com.thoughtworks.paranamer.BytecodeReadingParanamer;
 import com.thoughtworks.paranamer.CachingParanamer;
@@ -143,13 +148,18 @@ public final class ArgumentMapper {
     /**
      * 요청으로 부터 메소드에 전달할 파라미터의 값을 변환하여 가져온다.
      */
-    public Object[] getArguments(Object ... values) throws Exception {
+    public Object[] getArguments(ServletConfig config,
+    		ServletContext context,
+    		ControllerContext controllerContext, 
+    		HttpServletRequest req, 
+    		HttpServletResponse res, 
+    		Throwable e) throws Exception {
         Object[] objects = null;
         if (wrappers != null && wrappers.size() > 0) {
         	int size = wrappers.size();
     		objects = new Object[size];
     		for(int i = 0; i < size; i++) {
-    			objects[i] = wrappers.get(i).getArgument(i, argumentInfos.get(i), values);
+    			objects[i] = wrappers.get(i).getArgument(i, argumentInfos.get(i), controllerContext, config, context, req, res, e);
     		}
         }
         return objects;

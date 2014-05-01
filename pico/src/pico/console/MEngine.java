@@ -23,6 +23,6 @@ public class MEngine extends Console {
 	@WebMethod
     public void reload() throws ServletException
     {
-        engine.reload();
+        controllerContext.getControllerEngine().reload();
     }
 }

@@ -88,7 +88,7 @@ public class SchedulerManager {
 				ControllerContext controllerContext = (ControllerContext) jobDataMap.get("controllerContext");
 				ServletConfig config = (ServletConfig) jobDataMap.get("servletConfig");
 				
-				cron.invoke(controller, config, config.getServletContext(), controllerContext, null, null);
+				cron.invoke(controller, config, config.getServletContext(), controllerContext, null, null, null);
 			} catch (Exception e) {
 				throw new JobExecutionException(e);
 			}

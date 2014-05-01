@@ -22,7 +22,7 @@ public class MPlugin extends Console
         Plugin plugin = PluginManager.getPlugin(id);
         if (plugin != null) {
             String action = req.getParameter("action");
-            View view = plugin.perform(action, engine, req, res, context, session);
+            View view = plugin.perform(action, controllerContext, req, res, context);
             if (view != null && view instanceof PluginView) {
             	PluginView pluginView = (PluginView) view;
             	String ftlHtml = pluginView.getHtml();

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import pico.ControllerContext;
 import pico.engine.ControllerEngine;
 import pico.engine.MethodMapper;
 import pico.engine.util.ClassUtil;
@@ -74,12 +75,12 @@ public abstract class Plugin {
      * @return 수행후 화면상에 HTML 내용
      * @throws Exception 
      */
-    public View perform(String action, ControllerEngine engine, 
+    public View perform(String action, ControllerContext controllerContext, 
     		HttpServletRequest req, HttpServletResponse res,
-    		ServletContext context, HttpSession session) throws Exception {
+    		ServletContext context) throws Exception {
 		MethodMapper methodMapper = mappers.get(action);
 		
-		Object obj = methodMapper.invoke(this, engine, req, res, context, session);
+		Object obj = methodMapper.invoke(this, null, context, controllerContext, req, res, null);
 		if (obj != null && !(obj instanceof PluginView)) {
 			methodMapper.render(context, req, res, null, obj);
 			return null;

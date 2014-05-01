@@ -3,6 +3,7 @@ package pico.engine;
 
 import java.lang.reflect.Method;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -75,11 +76,16 @@ public class MethodMapper
         return (long) averageProcessingTime;
     }
     
-    public Object invoke(Object controller, Object ... objects) throws Exception {
+    public Object invoke(Object controller, ServletConfig config,
+    		ServletContext context,
+    		ControllerContext controllerContext, 
+    		HttpServletRequest req, 
+    		HttpServletResponse res, 
+    		Throwable e) throws Exception {
         callCount++;
         long start = System.currentTimeMillis();
         try {
-            return method.invoke(controller, argumentMapper.getArguments(objects));
+            return method.invoke(controller, argumentMapper.getArguments(config, context, controllerContext, req, res, e));
         } finally {
             long elapsedTime = System.currentTimeMillis() - start;
             averageProcessingTime = (averageProcessingTime * (callCount - 1) + elapsedTime) / callCount;

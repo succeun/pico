@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import pico.Before;
+import pico.ControllerContext;
 import pico.Parameter;
 import pico.WebController;
 import pico.WebMethod;
@@ -48,11 +49,11 @@ public class Console {
 	protected HttpServletRequest req;
 	protected HttpServletResponse res;
 	protected HttpSession session;
-	protected ControllerEngine engine;
+	protected ControllerContext controllerContext;
 	
 	@Before
-	public void onBeforeWithEngine(ControllerEngine engine) throws Exception {
-		this.engine = engine;
+	public void onBeforeWithEngine(ControllerContext controllerContext) throws Exception {
+		this.controllerContext = controllerContext;
 	}
 	
 	@Before

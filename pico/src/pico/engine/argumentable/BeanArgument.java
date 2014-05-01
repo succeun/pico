@@ -9,8 +9,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -24,6 +27,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.xml.sax.InputSource;
 
 import pico.ArgumentType;
+import pico.ControllerContext;
 import pico.commons.beans.BeanWrapper;
 
 
@@ -32,42 +36,37 @@ public class BeanArgument extends BaseArgument {
 		return true;
 	}
 	
-    public Object getArgument(int index, ArgumentInfo argumentInfo, Object ... values) throws Exception {
-        for (Object value : values) {
-        	if (value instanceof HttpServletRequest) {
-        		HttpServletRequest req = (HttpServletRequest) value;
-        		Class<?> beanClass = argumentInfo.getParameterType();
-                Object bean = null;
-                try {
-                	if (argumentInfo.getArgumentType() == ArgumentType.XML) {
-                		String reqValue = null;
-                		if (argumentInfo.isRequestBody()) {
-                			reqValue = getRequestBody(req);
-                		} else {
-                			reqValue = (String) getParameter(argumentInfo, req);
-                		}
-                		bean = getArgumentFromXml(reqValue, argumentInfo, beanClass);
-            		} else if (argumentInfo.getArgumentType() == ArgumentType.JSON) {
-            			String reqValue = null;
-                		if (argumentInfo.isRequestBody()) {
-                			reqValue = getRequestBody(req);
-                		} else {
-                			reqValue = (String) getParameter(argumentInfo, req);
-                		}
-            			bean = getArgumentFromJson(reqValue, argumentInfo, beanClass);
-            		} else {
-	                    bean = getArgumentFromAny(req, beanClass);
-            		}
-                } catch (InstantiationException e) {
-                    throw e;
-                } catch (IllegalAccessException e) {
-                    throw e;
-                }
-	
-                return bean;
-        	}
+	public Object getArgument(int index, ArgumentInfo argumentInfo, ControllerContext controllerContext, 
+			ServletConfig config, ServletContext context, HttpServletRequest req, HttpServletResponse res, Throwable ex) throws Exception {
+		Class<?> beanClass = argumentInfo.getParameterType();
+        Object bean = null;
+        try {
+        	if (argumentInfo.getArgumentType() == ArgumentType.XML) {
+        		String reqValue = null;
+        		if (argumentInfo.isRequestBody()) {
+        			reqValue = getRequestBody(req);
+        		} else {
+        			reqValue = (String) getParameter(argumentInfo, req);
+        		}
+        		bean = getArgumentFromXml(reqValue, argumentInfo, beanClass);
+    		} else if (argumentInfo.getArgumentType() == ArgumentType.JSON) {
+    			String reqValue = null;
+        		if (argumentInfo.isRequestBody()) {
+        			reqValue = getRequestBody(req);
+        		} else {
+        			reqValue = (String) getParameter(argumentInfo, req);
+        		}
+    			bean = getArgumentFromJson(reqValue, argumentInfo, beanClass);
+    		} else {
+                bean = getArgumentFromAny(req, beanClass);
+    		}
+        } catch (InstantiationException e) {
+            throw e;
+        } catch (IllegalAccessException e) {
+            throw e;
         }
-        return null;
+
+        return bean;
     }
     
     private String getRequestBody(HttpServletRequest req) throws IOException {

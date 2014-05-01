@@ -3,6 +3,11 @@
  */
 package pico.engine.argumentable;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import pico.ControllerContext;
 import pico.engine.ControllerEngine;
 
@@ -11,22 +16,8 @@ public class ControllerEngineArgument extends BaseArgument {
 		return (ControllerEngine.class.isAssignableFrom(paramType));
 	}
 	
-    public Object getArgument(int index, ArgumentInfo argumentInfo, Object ... values) throws Exception {
-    	ControllerEngine engine = null;
-    	for (Object value : values) {
-        	if (value instanceof ControllerContext) {
-        		engine = ((ControllerContext)value).getControllerEngine();
-        		break;
-        	}
-        }
-        if (engine == null) {
-            for (Object value : values) {
-            	if (value instanceof ControllerEngine) {
-            		engine = (ControllerEngine) value;
-            		break;
-            	}
-            }
-        }
-        return engine;
+	public Object getArgument(int index, ArgumentInfo argumentInfo, ControllerContext controllerContext, 
+			ServletConfig config, ServletContext context, HttpServletRequest req, HttpServletResponse res, Throwable ex) throws Exception {
+    	return controllerContext.getControllerEngine();
     }
 }
